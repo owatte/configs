@@ -12,7 +12,7 @@ main = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ defaultConfig
         { manageHook = manageDocks <+> manageHook defaultConfig
-	, layoutHook = avoidStruts $ smartBorders  $  tabbed shrinkText defaultTheme ||| Accordion ||| layoutHook defaultConfig
+	, layoutHook = avoidStruts $ smartBorders  $  tabbed shrinkText defaultTheme ||| Mirror Accordion ||| layoutHook defaultConfig
         , logHook = dynamicLogWithPP $ xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
