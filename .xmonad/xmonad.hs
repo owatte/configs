@@ -18,7 +18,7 @@ main = do
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
-	, terminal = "konsole"
+	, terminal = "xterm"
 	, workspaces = ["term", "code", "web"] ++ map show [4..8] ++ ["music"]
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "gnome-screensaver-command -l")
