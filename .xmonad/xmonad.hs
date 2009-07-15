@@ -22,8 +22,8 @@ main = do
 	, workspaces = ["term", "code", "web"] ++ map show [4..8] ++ ["music"]
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "gnome-screensaver-command -l")
-        , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/pics/'")
-        , ((0, xK_Print), spawn "scrot")
+        , ((mod4Mask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/pics/scrot/'")
+        , ((controlMask, xK_Print), spawn "scrot -e 'mv $f ~/pics/scrot'")
         ]
 
 
