@@ -17,6 +17,12 @@ qiv -x -t ~/pics/Au_Reve_v2-1280x800.jpg
 # Fire up apps
  
 gnome-screensaver & 
+if [ "$PS1" ]; then
+    # Disables the bloody CapsLock button
+    xmodmap -e "remove lock = Caps_Lock"
+fi
+
+
 if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
 fi

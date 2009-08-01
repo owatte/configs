@@ -1,5 +1,6 @@
 import XMonad
 import XMonad.Layout.Tabbed
+import XMonad.Layout.Spiral
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
