@@ -10,4 +10,5 @@ if [ "$PS1" ]; then
     xmodmap -e "remove lock = Caps_Lock"
 fi
 
+complete -cf sudo
 source ~/.git-completion.bash
