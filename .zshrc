@@ -1,8 +1,10 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt notify
+setopt autopushd
+setopt pushdignoredups
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -15,7 +17,5 @@ compinit
 
 
 alias scheme='mzscheme'
-alias simcity="wine ~/.wine/drive_c/Program\ Files/Maxis/SimCity\ 4\ Deluxe/SimCity\ 4.exe"
-alias "ls"="ls -x -X --color=always"
-alias wcam="LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so"
+alias ls="ls -x -X --color=always"
 

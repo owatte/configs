@@ -2,7 +2,7 @@
  
 # Load resources
  
-xrdb -merge .Xresources
+xrdb -merge .Xdefaults
  
 # Set up an icon tray
  
@@ -12,11 +12,15 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true  --exp
  
 xsetroot -solid black
 
+#Set background
 qiv -x -t ~/pics/Au_Reve_v2-1280x800.jpg
+
+env EDITOR='emacs'
  
 # Fire up apps
  
 gnome-screensaver & 
+
 if [ "$PS1" ]; then
     # Disables the bloody CapsLock button
     xmodmap -e "remove lock = Caps_Lock"

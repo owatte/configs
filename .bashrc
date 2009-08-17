@@ -5,10 +5,5 @@ export LD_LIBRARY_PATH
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
 
-if [ "$PS1" ]; then
-    # Disables the bloody CapsLock button
-    xmodmap -e "remove lock = Caps_Lock"
-fi
-
 complete -cf sudo
 source ~/.git-completion.bash
