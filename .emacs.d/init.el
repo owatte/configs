@@ -8,6 +8,15 @@
 
 (require 'paredit)
 
+(require 'color-theme)
+(setq color-theme-is-global t)
+(color-theme-charcoal-black)
+
+(set-face-font 'default "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-m-0-iso10646-1")
+
+(require 'ido)
+(ido-mode t)
+
 (mapc (lambda (mode)
 	(let ((hook (intern (concat (symbol-name mode)
 				    "-mode-hook"))))
