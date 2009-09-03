@@ -1,11 +1,11 @@
 /* mipl.l
-   Lexical Analyzer for mipl. 
-   Josh Bohde
+   Description: Lexical Analyzer for mipl. Makes use of start 
+   		conditions (see info page for lex) to handle comments and characters.
+   Author: Josh Bohde
+   Build: make
 */
 
 %{
-/* Defns of constants, variables, function prototypes, and #include’s
-go here */
 #include <string.h>
 
 #define T_IDENT      1
@@ -74,35 +74,61 @@ INTERROR	  {DIGIT}+
 %x comment chard
 %%
 
+
+
 \(\*		  {
 			printf("  ----> FOUND A COMMENT\n");
 			BEGIN(comment);
 			return T_COMMENT;
 	          }
-<comment>[^*\n]*    
-<comment>"*"+[^*\)\n]*
-<comment>{NEWLINE} numLines++;
-<comment>\*\)	   BEGIN(INITIAL);
+<comment>{
+	[^*\n]*		 /* do nothing with things that aren't newline or star */
+	"*"+[^*\)\n]*    /* star but no end parent */
+	{NEWLINE}	 numLines++; 
+	\*\)	   	 BEGIN(INITIAL);
+}
 
 
-'		  {
+
+'		  {	/*Block for handling character constants*/
 			BEGIN(chard);
+		  }
+
+<chard>{
+	\\'	  {	// newline charactesr
+			printTokenInfo("CHAR", "'\\n'");
+			BEGIN(INITIAL);
 			return T_CHAR;
 		  }
 
-<chard>\'	  {
-			printTokenInfo("CHAR", "'\\n'");
+	\t'	  {	// tab characters
+			printTokenInfo("CHAR", "'\\t'");
 			BEGIN(INITIAL);
+			return T_CHAR;
 		  }
 
-<chard>.'	  {
-			printTokenInfo("CHAR", strcat("'", yytext));
+	.'	  {	// other charactesr
+			char start[3] = "'";
+			printTokenInfo("CHAR", strcat(start, yytext));
 			BEGIN(INITIAL);
+			return T_CHAR;
 		  }
-<chard>(.(^')|')	  {
-			printf("**** Invalid character constant: '%s", yytext);
+
+	.[^'\n]+' {     // characters not terminated after one character
+			printf("**** Invalid character constant: '%s\n", yytext);
 			BEGIN(INITIAL);
+			return T_CHAR_ERROR;
 		  }
+
+	\n	  {	// termination at newline
+			printf("**** Unterminated character constant on Line %u\n", numLines);
+			numLines++;
+			BEGIN(INITIAL);
+			return T_CHAR_ERROR;
+		  }
+}
+
+
 
 and               {
                        printTokenInfo("AND", yytext);
@@ -337,18 +363,18 @@ write             {
 
 {WSPACE}          { }
 
-.                  {
+.                 {
                         printTokenInfo("UNKNOWN", yytext);
                         return T_UNKNOWN;
-                   }
+                  }
 %%
-// User-written code goes here
 void printTokenInfo(char* tokenType, char* lexeme) {
   printf("TOKEN: %s LEXEME: %s\n", tokenType, lexeme);
 }
-// You should specify a yywrap function.
-// Having it return 1 means only 1 input file will be scanned.
+
+
 int yywrap() { return 1; }
+
 int main( ) {
   while ( yylex() ) ;  // Keep processing tokens until 0 returned
   printf("Processed %d lines\n", numLines);
