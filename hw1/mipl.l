@@ -3,6 +3,7 @@
    		conditions (see info page for lex) to handle comments and characters.
    Author: Josh Bohde
    Build: make
+   Run: lexer < input_file 
 */
 
 %{
