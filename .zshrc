@@ -19,3 +19,21 @@ compinit
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
 
+PROMPT="%n@`hostname`:%~ $ "
+
+function precmd()
+{
+    # Adjust this to your current preferred prompt
+    RPROMPT=""
+    local _git _branch
+
+    # This call requires the "findup" script from http://www.davidfaure.fr/scripts
+    _git=`findup .git`
+
+    if test -n "$_git"; then
+        _branch=`sed -e 's,.*/,,' $_git/HEAD`
+        RPROMPT="branch: ($_branch)"
+    fi
+
+    # Add final character after the optional git branch (usually # or >)
+}
