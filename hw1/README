@@ -1,2 +1,0 @@
-BUILD: make
-RUN: lexer < input_file
