@@ -38,3 +38,4 @@ function precmd()
 
     # Add final character after the optional git branch (usually # or >)
 }
+
