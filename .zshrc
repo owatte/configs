@@ -14,6 +14,8 @@ zstyle :compinstall filename '/home/numix/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+
 export TERM=xterm
 
 alias scheme='mzscheme'
