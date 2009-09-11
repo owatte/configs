@@ -17,6 +17,7 @@ compinit
 
 
 export TERM=xterm
+export EDITOR=emacs
 
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"

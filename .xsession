@@ -6,7 +6,7 @@ xrdb -merge .Xdefaults
  
 # Set up an icon tray
  
-trayer --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 8 --transparent true --tint 0x000000 --height 12 &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 7 --transparent true --tint 0x000000 --height 12 &
  
 # Set the background color
  
