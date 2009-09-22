@@ -6,7 +6,7 @@ xrdb -merge .Xdefaults
  
 # Set up an icon tray
  
-trayer --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 7 --transparent true --tint 0x000000 --height 12 &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 5 --transparent true --tint 0x222222 --height 12 &
  
 # Set the background color
  
@@ -15,10 +15,9 @@ xsetroot -solid black
 #Set background
 qiv -x -t ~/pics/Au_Reve_v2-1280x800.jpg
 
-env EDITOR='emacs'
- 
 # Fire up apps
- 
+
+emacs --daemon 
 gnome-screensaver & 
 
 if [ "$PS1" ]; then

@@ -4,6 +4,8 @@
            (setq load-path (cons my-lisp-dir load-path))
            (normal-top-level-add-subdirs-to-load-path)))
 
+(setq inhibit-startup-message t)
+
 (require 'quack)
 
 (require 'paredit)
@@ -11,8 +13,7 @@
 (require 'color-theme)
 (setq color-theme-is-global t)
 (color-theme-charcoal-black)
-
-(set-face-font 'default "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-m-0-iso10646-1")
+(set-default-font "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-*-*-*-*")
 
 (require 'ido)
 (ido-mode t)
@@ -41,4 +42,14 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+
+(defun nuke-all-buffers ()
+  "kill all buffers, leaving *scratch* only"
+  (interactive)
+  (mapcar (lambda (x) (kill-buffer x))
+         (buffer-list))
+  (delete-other-windows))
+
+
 

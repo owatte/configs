@@ -1,6 +1,6 @@
-Config { font = "-adobe-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*"
-       , bgColor = "black"
-       , fgColor = "grey"
+Config { font = "-*-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*"
+       , bgColor = "#111111"
+       , fgColor = "#114499"
        , position = TopW L 95
        , lowerOnStart = True
        , commands = [Run Weather "KVIH" ["-t"," <tempF>F <skyCondition> ","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000

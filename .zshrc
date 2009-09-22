@@ -17,9 +17,11 @@ compinit
 
 export TERM=xterm
 
-export TERM=xterm
-export EDITOR=emacs
+export TERM=xterm-256color
+export EDITOR='emacsclient -t'
+export ALTERNATE_EDITOR=emacs
 
+alias em='emacsclient -t'
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
 
