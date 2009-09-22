@@ -8,19 +8,28 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Accordion
+import XMonad.Layout.PerWorkspace
+import XMonad.Layout.IM
+import Data.Ratio ((%))
+import XMonad.Hooks.UrgencyHook
 
 main = do
   xmproc <- spawnPipe "xmobar"
-  xmonad $ defaultConfig
+  xmonad $ withUrgencyHook NoUrgencyHook
+         $ defaultConfig
         { manageHook = manageDocks <+> manageHook defaultConfig
-	, layoutHook = smartBorders $ (( avoidStruts $  tabbed shrinkText defaultTheme ||| Mirror Accordion ||| layoutHook defaultConfig) ||| Full)
+	, layoutHook = smartBorders $ (onWorkspace "term" (avoidStruts $ Full) $
+                                       onWorkspace "code" (avoidStruts $ Full) $
+                                       onWorkspace "mail" (avoidStruts $ Full) $
+                                       onWorkspace "music" (avoidStruts $ Full) $
+                                       (avoidStruts $  tabbed shrinkText defaultTheme ||| Mirror Accordion ||| layoutHook defaultConfig))
         , logHook = dynamicLogWithPP $ xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
 	, terminal = "xterm"
-	, workspaces = ["term", "code", "web"] ++ map show [4..8] ++ ["music"]
+	, workspaces = ["term", "code", "web", "mail"] ++ map show [5..8] ++ ["music"]
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "gnome-screensaver-command -l")
         , ((mod4Mask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/pics/scrot/'")
