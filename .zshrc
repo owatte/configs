@@ -15,8 +15,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export TERM=xterm
-
 export TERM=xterm-256color
 export EDITOR='emacsclient -t'
 export ALTERNATE_EDITOR=emacs
@@ -24,6 +22,9 @@ export ALTERNATE_EDITOR=emacs
 alias em='emacsclient -t'
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
+
+
+alias tv='DISPLAY=:0.1'
 
 PROMPT="%n@`hostname`:%~ $ "
 
@@ -43,4 +44,5 @@ function precmd()
 
     # Add final character after the optional git branch (usually # or >)
 }
+
 
