@@ -5,6 +5,8 @@
            (normal-top-level-add-subdirs-to-load-path)))
 
 (setq inhibit-startup-message t)
+(setq display-battery-mode t)
+(setq column-number-mode t)
 
 (require 'quack)
 
@@ -17,6 +19,9 @@
 
 (require 'ido)
 (ido-mode t)
+
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
 
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
