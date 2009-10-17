@@ -24,6 +24,7 @@ alias em='emacsclient -t'
 alias sued='sudo emacs -nw'
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
+alias fb="/opt/Focus\ Booster/bin/Focus\ Booster"
 
 PROMPT="%n@`hostname`:%~ $ "
 
