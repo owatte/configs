@@ -7,6 +7,8 @@
 (setq inhibit-startup-message t)
 (setq display-battery-mode t)
 (setq column-number-mode t)
+(setq backup-directory-alist
+'(("." . "~/.emacs/backups")))
 
 (require 'quack)
 
@@ -55,6 +57,3 @@
   (mapcar (lambda (x) (kill-buffer x))
          (buffer-list))
   (delete-other-windows))
-
-
-
