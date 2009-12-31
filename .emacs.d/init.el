@@ -10,6 +10,11 @@
 (setq backup-directory-alist
 '(("." . "~/.emacs/backups")))
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
+
 (require 'quack)
 
 (require 'paredit)
@@ -17,7 +22,7 @@
 (require 'color-theme)
 (setq color-theme-is-global t)
 (color-theme-charcoal-black)
-(set-default-font "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-*-*-*-*")
+;;(set-default-font "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-*-*-*-*")
 
 (require 'ido)
 (ido-mode t)
@@ -34,6 +39,24 @@
                              "~/org/school.org" 
                              "~/org/personal.org"))
 
+
+;; Haskell Stuff
+(require 'inf-haskell) 
+
+(custom-set-variables
+   '(haskell-program-name "ghci")) 
+
+(add-hook 'haskell-mode-hook
+       '(lambda ()
+          (setq process-connection-type nil)))
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+
+;; Twitter Stuff
+(load "~/.emacs.d/vendor/twitter/twittering-mode.el")
+(require 'twittering-mode)
+(setq twittering-username "joshbohde")
 
 
 (mapc (lambda (mode)
