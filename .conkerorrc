@@ -1,0 +1,17 @@
+require("global-overlay-keymap.js");
+require("session.js");
+session_auto_save_auto_load = true;
+
+url_completion_use_bookmarks = true;
+url_completion_use_history = false;
+
+user_pref("browser.history_expire_day", 0);
+
+session_pref("signon.rememberSignons", true);
+session_pref("signon.expireMasterPassword", false);
+session_pref("signon.SignonFileName", "signons.txt");
+
+Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
+
+define_key(content_buffer_normal_keymap, "d", "follow-new-buffer");
+
