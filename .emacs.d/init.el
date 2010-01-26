@@ -27,6 +27,11 @@
 (require 'ido)
 (ido-mode t)
 
+
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 
@@ -37,7 +42,8 @@
 (setq org-log-done t)
 (setq org-agenda-files (list "~/org/kmnr.org"
                              "~/org/school.org" 
-                             "~/org/personal.org"))
+                             "~/org/personal.org"
+                             "~/org/work.org"))
 
 
 ;; Haskell Stuff
@@ -80,3 +86,6 @@
   (mapcar (lambda (x) (kill-buffer x))
          (buffer-list))
   (delete-other-windows))
+
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "/usr/bin/conkeror")
