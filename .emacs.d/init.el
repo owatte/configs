@@ -32,6 +32,10 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
+(require 'python-pep8)
+(autoload 'python-pep8 "python-pep8")
+(require 'python-pylint)
+(autoload 'pylint "python-pylint")
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 
@@ -49,9 +53,6 @@
 ;; Haskell Stuff
 (require 'inf-haskell) 
 
-(custom-set-variables
-   '(haskell-program-name "ghci")) 
-
 (add-hook 'haskell-mode-hook
        '(lambda ()
           (setq process-connection-type nil)))
@@ -64,6 +65,11 @@
 (require 'twittering-mode)
 (setq twittering-username "joshbohde")
 
+;; Git Stuff
+(require 'magit)
+
+;; Add postmode for sup
+(add-to-list 'auto-mode-alist '("sup\\.\\(compose\\|forward\\|reply\\|resume\\)-mode$" . post-mode))
 
 (mapc (lambda (mode)
 	(let ((hook (intern (concat (symbol-name mode)
@@ -89,3 +95,7 @@
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "/usr/bin/conkeror")
+
+(custom-set-variables
+ '(haskell-program-name "ghci")) 
+

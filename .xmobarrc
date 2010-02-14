@@ -1,11 +1,11 @@
 Config { font = "-*-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*"
        , bgColor = "#111111"
-       , fgColor = "#114499"
+       , fgColor = "lightblue"
        , position = TopW L 95
        , lowerOnStart = True
-       , commands = [Run Weather "KVIH" ["-t"," <tempF>F <skyCondition> ","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
-                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                    , Run Network "wlan0" ["-L","0","-H","256","--normal","green","--high","red"] 10
+       , commands = [Run Weather "KVIH" ["-t"," <tempF>F <skyCondition> ","-L","40","-H","75","--normal","#aef100","--high","red","--low","lightblue"] 36000
+                    , Run Cpu ["-L","3","-H","50","--normal","#aef100","--high","red"] 10
+                    , Run Network "wlan0" ["-L","0","-H","256","--normal","#aef100","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Date "%a %b %_d %l:%M" "date" 10
@@ -13,5 +13,5 @@ Config { font = "-*-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlan0% | %cpu% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | %KVIH%"
+       , template = "%StdinReader% }{ %wlan0% | %cpu% | %memory% * %swap%    <fc=#aef100>%date%</fc> | %KVIH%"
        }

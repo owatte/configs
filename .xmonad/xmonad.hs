@@ -20,8 +20,6 @@ main = do
         { manageHook = manageDocks <+> manageHook defaultConfig
 	, layoutHook = smartBorders $ (onWorkspace "term" (avoidStruts $ Full) $
                                        onWorkspace "code" (avoidStruts $ Full) $
-                                       onWorkspace "mail" (avoidStruts $ Full) $
-                                       onWorkspace "music" (avoidStruts $ Full) $
                                        (avoidStruts $  tabbed shrinkText defaultTheme ||| Mirror Accordion ||| layoutHook defaultConfig))
         , logHook = dynamicLogWithPP $ xmobarPP
                         { ppOutput = hPutStrLn xmproc
@@ -29,7 +27,7 @@ main = do
                         }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
 	, terminal = "xterm"
-	, workspaces = ["term", "code", "web", "mail"] ++ map show [5..8] ++ ["music"]
+	, workspaces = ["term", "code", "web"] ++ map show [4..9]
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "gnome-screensaver-command -l")
         , ((mod4Mask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/pics/scrot/'")
