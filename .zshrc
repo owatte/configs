@@ -28,10 +28,12 @@ alias ls="ls -x -X --color=always"
 alias fb="/opt/Focus\ Booster/bin/Focus\ Booster"
 alias sc="byobu -RRd main"
 
-
 alias tv='DISPLAY=:0.1'
 
 PROMPT="%n@`hostname`:%~ $ "
+
+stty stop undef
+stty start undef
 
 function precmd()
 {
