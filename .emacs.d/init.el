@@ -69,7 +69,10 @@
 (require 'magit)
 
 ;; Add postmode for sup
+(require 'lbdb)
 (add-to-list 'auto-mode-alist '("sup\\.\\(compose\\|forward\\|reply\\|resume\\)-mode$" . post-mode))
+(add-hook 'post-mode-hook (lambda ()
+                            (define-key post-mode-map "\C-c\C-l" 'lbdb)))
 
 (mapc (lambda (mode)
 	(let ((hook (intern (concat (symbol-name mode)

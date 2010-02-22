@@ -12,3 +12,5 @@
     who = shortlog -s --
 [push]
 	default = tracking
+[branch]
+	autosetupmerge = true

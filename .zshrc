@@ -17,7 +17,7 @@ compinit
 
 export TERM=xterm-256color
 export EDITOR='emacsclient -t'
-export ALTERNATE_EDITOR=emacs
+export ALTERNATE_EDITOR='emacs -nw'
 
 alias em='emacsclient -t'
 alias e='emacs -nw'
@@ -26,7 +26,7 @@ alias sued='sudo emacs -nw'
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
 alias fb="/opt/Focus\ Booster/bin/Focus\ Booster"
-alias sc="byobu -RRd"
+alias sc="byobu -RRd main"
 
 
 alias tv='DISPLAY=:0.1'
