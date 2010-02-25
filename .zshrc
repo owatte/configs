@@ -25,7 +25,6 @@ alias ed='emacs --daemon'
 alias sued='sudo emacs -nw'
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
-alias fb="/opt/Focus\ Booster/bin/Focus\ Booster"
 alias sc="byobu -RRd main"
 
 
@@ -49,5 +48,3 @@ function precmd()
 
     # Add final character after the optional git branch (usually # or >)
 }
-
-
