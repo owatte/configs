@@ -1,3 +1,9 @@
 [submodule ".emacs.d/vendor/twitter"]
 	path = .emacs.d/vendor/twitter
 	url = git://github.com/hayamiz/twittering-mode.git
+[submodule ".emacs.d/vendor/pycoverage"]
+	path = .emacs.d/vendor/pycoverage
+	url = git://github.com/mattharrison/pycoverage.el.git
+[submodule ".emacs.d/vendor/mingus"]
+	path = .emacs.d/vendor/mingus
+	url = git://github.com/pft/mingus.git
