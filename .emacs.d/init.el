@@ -20,8 +20,9 @@
 (require 'paredit)
 
 (require 'color-theme)
+(require 'zenburn)
 (setq color-theme-is-global t)
-(color-theme-charcoal-black)
+(color-theme-zenburn)
 ;;(set-default-font "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-*-*-*-*")
 
 (require 'ido)
