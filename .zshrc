@@ -33,6 +33,10 @@ PROMPT="%n@`hostname`:%~ $ "
 
 stty stop undef
 stty start undef
+stty werase undef
+
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper_bashrc
 
 function precmd()
 {
