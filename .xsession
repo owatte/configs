@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
  
 # Load resources
  
@@ -17,6 +17,9 @@ qiv -x -t ~/pics/Au_Reve_v2-1280x800.jpg
 
 # Fire up apps
 emacs --daemon 
+
+gnome-keyring-daemon
+
 gnome-screensaver & 
 
 if [ -x /usr/bin/nm-applet ] ; then
@@ -28,4 +31,4 @@ if [ -x /usr/bin/gnome-power-manager ] ; then
    gnome-power-manager &
 fi
  
-exec xmonad
+exec ~/.cabal/bin/xmonad
