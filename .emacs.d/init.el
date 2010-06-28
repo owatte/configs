@@ -23,7 +23,6 @@
 (require 'zenburn)
 (setq color-theme-is-global t)
 (color-theme-zenburn)
-;;(set-default-font "-unknown-inconsolata-medium-*-normal-*-14-*-*-*-*-*-*-*")
 
 (require 'ido)
 (ido-mode t)
@@ -103,3 +102,4 @@
 (custom-set-variables
  '(haskell-program-name "ghci")) 
 
+(require 'xclip)
