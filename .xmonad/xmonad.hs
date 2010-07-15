@@ -18,9 +18,7 @@ main = do
   xmonad $ withUrgencyHook NoUrgencyHook
          $ defaultConfig
         { manageHook = manageDocks <+> manageHook defaultConfig
-	, layoutHook = smartBorders $ (onWorkspace "term" (avoidStruts $ Full) $
-                                       onWorkspace "code" (avoidStruts $ Full) $
-                                       (avoidStruts $  tabbed shrinkText defaultTheme ||| Mirror Accordion ||| layoutHook defaultConfig))
+	, layoutHook = smartBorders $ (avoidStruts $  tabbed shrinkText defaultTheme ||| Mirror Accordion ||| layoutHook defaultConfig)
         , logHook = dynamicLogWithPP $ xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
@@ -32,6 +30,14 @@ main = do
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "gnome-screensaver-command -l")
         , ((mod4Mask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/pics/scrot/'")
         , ((controlMask, xK_Print), spawn "scrot -e 'mv $f ~/pics/scrot'")
+        -- multimedia keys
+        --
+        -- XF86AudioLowerVolume
+        , ((0            , 0x1008ff11), spawn "aumix -v -2")
+        -- XF86AudioRaiseVolume
+        , ((0            , 0x1008ff13), spawn "aumix -v +2")
+        -- XF86AudioMute
+        , ((0            , 0x1008ff12), spawn "amixer -q set Master toggle")
         ]
 
 
