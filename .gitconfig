@@ -3,7 +3,7 @@
 	email = josh.bohde@gmail.com
 
 [alias]
-    st = status
+    st = status -s
     ci = commit
     br = branch
     co = checkout
@@ -14,3 +14,7 @@
 	default = tracking
 [branch]
 	autosetupmerge = true
+	autosetuprebase = always
+[github]
+	user = joshbohde
+	token = 96b594b0091881372c23fdd22193354f

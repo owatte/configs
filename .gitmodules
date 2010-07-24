@@ -7,3 +7,6 @@
 [submodule ".emacs.d/vendor/mingus"]
 	path = .emacs.d/vendor/mingus
 	url = git://github.com/pft/mingus.git
+[submodule ".emacs.d/vendor/coffee-mode"]
+	path = .emacs.d/vendor/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git
