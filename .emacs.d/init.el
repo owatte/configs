@@ -39,6 +39,26 @@
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 
+(add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  (add-hook 'after-save-hook
+      '(lambda ()
+         (when (not (string= (buffer-name) "Cakefile"))
+          (coffee-compile-file))))
+  (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+  (define-key coffee-mode-map [(meta R)] 'coffee-compile-region)
+  (set (make-local-variable 'tab-width) 2))
+
+(add-hook 'coffee-mode-hook
+  '(lambda () (coffee-custom)))
+
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (define-key global-map "\C-cl" 'org-store-link)
@@ -49,16 +69,13 @@
                              "~/org/personal.org"
                              "~/org/work.org"))
 
-
 ;; Haskell Stuff
 (require 'inf-haskell) 
-
 (add-hook 'haskell-mode-hook
        '(lambda ()
           (setq process-connection-type nil)))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-
 
 ;; Twitter Stuff
 (load "~/.emacs.d/vendor/twitter/twittering-mode.el")
@@ -103,3 +120,5 @@
  '(haskell-program-name "ghci")) 
 
 (require 'xclip)
+(require 'rainbow-mode)
+(add-to-list 'auto-mode-alist '("\\.css$" . rainbow-mode))
