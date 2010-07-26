@@ -18,7 +18,7 @@
 (require 'quack)
 
 (require 'paredit)
-
+(require 'magit)
 (require 'color-theme)
 (require 'zenburn)
 (setq color-theme-is-global t)
@@ -77,6 +77,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+<<<<<<< Updated upstream
 ;; Twitter Stuff
 (load "~/.emacs.d/vendor/twitter/twittering-mode.el")
 (require 'twittering-mode)

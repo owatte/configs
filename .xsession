@@ -12,9 +12,6 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true  --exp
 # Set the background color
 xsetroot -solid black
 
-#Set background
-qiv -x -t ~/pics/Au_Reve_v2-1280x800.jpg
-
 # Fire up apps
 emacs --daemon 
 
@@ -31,4 +28,4 @@ if [ -x /usr/bin/gnome-power-manager ] ; then
    gnome-power-manager &
 fi
  
-exec ~/.cabal/bin/xmonad
+xmonad

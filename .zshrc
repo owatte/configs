@@ -18,6 +18,7 @@ compinit
 export TERM=xterm-256color
 export EDITOR='emacsclient -t'
 export ALTERNATE_EDITOR='emacs -nw'
+export PATH='/home/bohde/.bin':$PATH:'/var/lib/gems/1.9.1/bin'
 
 alias em='emacsclient -t'
 alias e='emacs -nw'
@@ -36,7 +37,7 @@ stty start undef
 stty werase undef
 
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_bashrc
+source /usr/local/bin/virtualenvwrapper.sh
 
 function precmd()
 {
