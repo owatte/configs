@@ -11,7 +11,7 @@
 '(("." . "~/.emacs/backups")))
 
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
 
@@ -46,9 +46,9 @@
 (defun coffee-custom ()
   "coffee-mode-hook"
   (add-hook 'after-save-hook
-      '(lambda ()
-         (when (not (string= (buffer-name) "Cakefile"))
-          (coffee-compile-file))))
+            '(lambda ()
+               (when (string-match "\.coffee$" (buffer-name))
+                 (coffee-compile-file))))
   (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
   (define-key coffee-mode-map [(meta R)] 'coffee-compile-region)
   (set (make-local-variable 'tab-width) 2))

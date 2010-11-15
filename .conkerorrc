@@ -14,12 +14,6 @@ reddit_end_behavior="page";
 let (sheet = get_home_directory()) {
     sheet.append(".conkeror");
     sheet.append("stylesheets");
-    sheet.append("reddit.css");
-    register_user_stylesheet(make_uri(sheet));
-}
-let (sheet = get_home_directory()) {
-    sheet.append(".conkeror");
-    sheet.append("stylesheets");
     sheet.append("helvetireader.2.css");
     register_user_stylesheet(make_uri(sheet));
 }

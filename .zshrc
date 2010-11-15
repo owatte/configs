@@ -18,7 +18,8 @@ compinit
 export TERM=xterm-256color
 export EDITOR='emacsclient -t'
 export ALTERNATE_EDITOR='emacs -nw'
-export PATH='/home/bohde/.bin':$PATH:'/var/lib/gems/1.9.1/bin'
+export PATH="$HOME/.bin":"$HOME/.cabal/bin":$PATH:'/var/lib/gems/1.9.1/bin'
+export BCAT_BROWSER="uzbl-browser"
 
 alias em='emacsclient -t'
 alias e='emacs -nw'
@@ -26,9 +27,10 @@ alias ed='emacs --daemon'
 alias sued='sudo emacs -nw'
 alias scheme='mzscheme'
 alias ls="ls -x -X --color=always"
-alias sc="byobu -RRd main"
+alias sc="byobu -RRd"
 
 alias tv='DISPLAY=:0.1'
+function git(){hub "$@"}
 
 PROMPT="%n@`hostname`:%~ $ "
 
