@@ -15,6 +15,5 @@
 [branch]
 	autosetupmerge = true
 	autosetuprebase = always
-[github]
-	user = joshbohde
-	token = 96b594b0091881372c23fdd22193354f
+[core]
+	excludesfile = /home/joshbohde/.git/.gitignore
