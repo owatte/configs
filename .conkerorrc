@@ -25,6 +25,10 @@ session_pref("signon.rememberSignons", true);
 session_pref("signon.expireMasterPassword", false);
 session_pref("signon.SignonFileName", "signons.txt");
 
+define_webjump("d", "http://duckduckgo.com/?q=%s");
+define_webjump("hub", "http://github.com/search?q=%s&type=Everything");
+read_url_handler_list = [read_url_make_default_webjump_handler("d")];
+
 Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
 
 define_key(content_buffer_normal_keymap, "d", "follow-new-buffer");
