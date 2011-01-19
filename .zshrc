@@ -57,3 +57,8 @@ function precmd()
 
     # Add final character after the optional git branch (usually # or >)
 }
+
+_fab_list() {
+	reply=(`fab --shortlist`) 
+}
+compctl -K _fab_list fab
