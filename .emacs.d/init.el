@@ -123,3 +123,7 @@
 (require 'xclip)
 (require 'rainbow-mode)
 (add-to-list 'auto-mode-alist '("\\.css$" . rainbow-mode))
+
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq confirm-nonexistent-file-or-buffer nil)
+(setq ido-create-new-buffer 'always)
