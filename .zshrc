@@ -20,6 +20,7 @@ export EDITOR='emacsclient -t'
 export ALTERNATE_EDITOR='emacs -nw'
 export PATH="$HOME/.bin":"$HOME/.cabal/bin":$PATH:'/var/lib/gems/1.9.1/bin'
 export BCAT_BROWSER="uzbl-browser"
+export PIP_DOWNLOAD_CACHE="/tmp/pip-download-cache/"
 
 alias em='emacsclient -t'
 alias e='emacs -nw'
@@ -39,7 +40,7 @@ stty start undef
 stty werase undef
 
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_bashrc
 
 function precmd()
 {

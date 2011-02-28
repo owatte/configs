@@ -77,7 +77,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
-<<<<<<< Updated upstream
 ;; Twitter Stuff
 (load "~/.emacs.d/vendor/twitter/twittering-mode.el")
 (require 'twittering-mode)
