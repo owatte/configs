@@ -20,9 +20,9 @@
 (require 'paredit)
 (require 'magit)
 (require 'color-theme)
-(require 'zenburn)
+(require 'color-theme-almost-monokai)
 (setq color-theme-is-global t)
-(color-theme-zenburn)
+(color-theme-almost-monokai)
 
 (require 'ido)
 (ido-mode t)
