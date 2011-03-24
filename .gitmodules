@@ -10,3 +10,6 @@
 [submodule ".emacs.d/vendor/coffee-mode"]
 	path = .emacs.d/vendor/coffee-mode
 	url = git://github.com/defunkt/coffee-mode.git
+[submodule ".emacs.d/vendor/gist.el"]
+	path = .emacs.d/vendor/gist.el
+	url = git://github.com/defunkt/gist.el.git

@@ -18,7 +18,6 @@
 (require 'quack)
 
 (require 'paredit)
-(require 'magit)
 (require 'color-theme)
 (require 'color-theme-almost-monokai)
 (setq color-theme-is-global t)
@@ -57,6 +56,7 @@
   '(lambda () (coffee-custom)))
 
 (load "config/javascript.el")
+(load "config/git.el")
 
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -80,9 +80,6 @@
 (load "~/.emacs.d/vendor/twitter/twittering-mode.el")
 (require 'twittering-mode)
 (setq twittering-username "joshbohde")
-
-;; Git Stuff
-(require 'magit)
 
 ;; Add postmode for sup
 (require 'lbdb)
