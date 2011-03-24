@@ -26,6 +26,9 @@
 (require 'ido)
 (ido-mode t)
 
+(add-to-list 'load-path "~/.emacs.d/vendor/perspective-el")
+(require 'perspective)
+(persp-mode)
 
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))

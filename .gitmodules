@@ -13,3 +13,6 @@
 [submodule ".emacs.d/vendor/gist.el"]
 	path = .emacs.d/vendor/gist.el
 	url = git://github.com/defunkt/gist.el.git
+[submodule ".emacs.d/vendor/perspective-el"]
+	path = .emacs.d/vendor/perspective-el
+	url = https://github.com/nex3/perspective-el.git
