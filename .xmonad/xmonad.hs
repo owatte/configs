@@ -33,9 +33,9 @@ main = do
         -- multimedia keys
         --
         -- XF86AudioLowerVolume
-        , ((0            , 0x1008ff11), spawn "aumix -v -2")
+        , ((0            , 0x1008ff11), spawn "amixer set Master 2dB-")
         -- XF86AudioRaiseVolume
-        , ((0            , 0x1008ff13), spawn "aumix -v +2")
+        , ((0            , 0x1008ff13), spawn "amixer set Master 2dB+")
         -- XF86AudioMute
         , ((0            , 0x1008ff12), spawn "amixer -q set Master toggle")
         ]
