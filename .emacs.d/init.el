@@ -19,9 +19,10 @@
 
 (require 'paredit)
 (require 'color-theme)
-(require 'color-theme-almost-monokai)
+(add-to-list 'load-path "~/.emacs.d/vendor/solarized-theme")
+(require 'color-theme-solarized)
 (setq color-theme-is-global t)
-(color-theme-almost-monokai)
+(color-theme-solarized-dark)
 
 (require 'ido)
 (ido-mode t)

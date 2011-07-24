@@ -3,7 +3,6 @@
 # Load resources
  
 xrdb -merge .Xdefaults
-xrdb -merge .look-zenburn.xrdb
 
 # Set up an icon tray
  
