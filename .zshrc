@@ -40,7 +40,7 @@ stty start undef
 stty werase undef
 
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_bashrc
+source /usr/local/bin/virtualenvwrapper.sh
 
 function precmd()
 {
