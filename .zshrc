@@ -42,6 +42,17 @@ stty werase undef
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
+has_virtualenv() {
+    if [ -e .venv ]; then
+        workon `cat .venv`
+    fi
+}
+venv_cd () {
+    cd "$@" && has_virtualenv
+}
+alias cd="venv_cd"
+
+
 function precmd()
 {
     # Adjust this to your current preferred prompt
@@ -62,4 +73,8 @@ function precmd()
 _fab_list() {
 	reply=(`fab --shortlist`) 
 }
+
+
+
 compctl -K _fab_list fab
+
